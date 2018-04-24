@@ -1,6 +1,6 @@
 {
   "name": "togethertube-vote-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node app to bot votes on the site togethertube.com",
   "main": "index.js",
   "scripts": {
