@@ -4,7 +4,7 @@
 
 Clone the repo: `git clone https://github.com/Delivator/togethertube-vote-bot.git`
 
-Navigate to the repository directory: `cd togethertube-vote-bot`
+Navigate to the repository directory: `cd togethertube-vote-bot/`
 
 Install the required depencies: `npm install`
 
@@ -69,3 +69,5 @@ ws.on("open", () => {
   ws.send('{"mid":"chatmessage","message":"Hello World!"}');
 });
 ```
+
+This will connect to the chat of the room `test` and sends the message `Hello World!`.
