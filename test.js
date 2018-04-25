@@ -16,7 +16,7 @@ if (fs.existsSync("./sessions.json")) {
 }
 
 function main(sessions) {
-  bot.addVote("vultus", sessions[0], {mediaServiceId: "youtube", mediaId: "TQG7m1BFeRc"})
+  bot.addVote("test", sessions[0], {mediaServiceId: "youtube", mediaId: "jNQXAC9IVRw"})
   .then(() => {
     console.log("Vote Added");
   })

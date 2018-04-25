@@ -73,4 +73,4 @@ module.exports.addVote = (room, playSession, data) => {
         reject(err);
       })
   });
-}
+};
