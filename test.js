@@ -6,22 +6,22 @@ if (fs.existsSync("./sessions.json")) {
   main(sessions);
 } else {
   bot.generatePlaySessions(1)
-  .then(() => {
-    let sessions = require("./sessions.json").sessions;
-    main(sessions);
-  })
-  .catch(err => {
-    console.error(err);
-  })
+    .then(() => {
+      let sessions = require("./sessions.json").sessions;
+      main(sessions);
+    })
+    .catch(err => {
+      console.error(err);
+    });
 }
 
 function main(sessions) {
   bot.addVote("test", sessions[0], {mediaServiceId: "youtube", mediaId: "jNQXAC9IVRw"})
-  .then(() => {
-    console.log("Vote Added");
-  })
-  .catch(error => {
-    console.error(error);
-  });
+    .then(() => {
+      console.log("Vote Added");
+    })
+    .catch(error => {
+      console.error(error);
+    });
 }
 

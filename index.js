@@ -1,7 +1,6 @@
 const got = require("got");
 const fs = require("fs");
 
-
 module.exports.generatePlaySessions = (sessionCount = 1) => {
   return new Promise((resolve, reject) => {
     let fileName = "./sessions.json";

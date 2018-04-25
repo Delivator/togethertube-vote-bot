@@ -1,6 +1,6 @@
 {
   "name": "togethertube-vote-bot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A node app to bot votes on the site togethertube.com",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Delivator/togethertube-vote-bot#readme",
   "dependencies": {
-    "got": "^8.3.0"
+    "got": "^8.3.0",
+    "ws": "^5.1.1"
   }
 }
