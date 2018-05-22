@@ -22,9 +22,12 @@ module.exports.generatePlaySessions = (sessionCount = 1) => {
     }
   
     let url = "https://togethertube.com/rooms/dev";
+
+    console.log(`Generating ${count} session(s)...`);
   
     function processRequests(count) {
       if (count < 1) return;
+      process.stdout.write(`${count} session(s) left.\r`)
       got(url)
         .then(res => {
           if (res.statusCode === 200) {

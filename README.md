@@ -2,18 +2,14 @@
 
 ## Installation
 
-Clone the repo: `git clone https://github.com/Delivator/togethertube-vote-bot.git`
-
-Navigate to the repository directory: `cd togethertube-vote-bot/`
-
-Install the required depencies: `npm install`
+Install using npm: `npm install togethertube-vote-bot`
 
 ## Usage
 
 ### Generating sessions:
 
 ```javascript
-const bot = require("./index");
+const bot = require("togethertube-vote-bot");
 
 bot.generatePlaySessions(1)
   .then(() => {
@@ -30,7 +26,7 @@ This will generate (or add) one session and will save it in the `sessions.json` 
 ### Adding playlist votes:
 
 ```javascript
-const bot = require("./index");
+const bot = require("togethertube-vote-bot");
 const sessions = require("./sessions.json").sessions;
 
 const room = "test";
