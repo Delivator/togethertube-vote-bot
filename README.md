@@ -21,7 +21,7 @@ bot.generatePlaySessions(1)
   });
 ```
 
-This will generate (or add) one session and will save it in the `sessions.json` file located in the same directory as the script.
+This will generate one session and print it out in the console.
 
 ### Adding playlist votes:
 
@@ -66,4 +66,4 @@ ws.on("open", () => {
 });
 ```
 
-This will connect to the chat of the room `test` and sends the message `Hello World!`.
+This will connect to the chat of the room `test` and send the message `Hello World!`.
