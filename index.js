@@ -1,26 +1,14 @@
 const got = require("got");
-const fs = require("fs");
 
 module.exports.generatePlaySessions = (sessionCount = 1) => {
   return new Promise((resolve, reject) => {
-    let fileName = "./sessions.json";
     let count = sessionCount;
-    let sessions;
+    let sessions = [];
   
     if (sessionCount < 1) {
       reject("Session count must be 1 or more!");
     }
-  
-    try {
-      sessions = require(fileName);
-    } catch (error) {
-      fs.writeFile(fileName, JSON.stringify({sessions: []}, null, 2), (err) => {
-        if (err) reject(err);
-        console.log("Session file has been created!")
-        sessions = require(fileName);
-      });
-    }
-  
+
     let url = "https://togethertube.com/rooms/dev";
 
     console.log(`Generating ${count} session(s)...`);
@@ -33,13 +21,10 @@ module.exports.generatePlaySessions = (sessionCount = 1) => {
           if (res.statusCode === 200) {
             let sessionCookie = res.headers["set-cookie"][0];
             let playSession = sessionCookie.split(";")[0];
-            sessions.sessions.push(playSession);
+            sessions.push(playSession);
             if (count === 1) {
-              fs.writeFile(fileName, JSON.stringify(sessions, null, 2), (error) => {
-                if (error) reject(error);
-                console.log(`Generated ${sessionCount} session(s)`);
-                resolve();
-              });
+              console.log(`Generated ${sessionCount} session(s)`);
+              return resolve(sessions);
             }
           }
           processRequests(count -= 1);

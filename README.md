@@ -12,9 +12,9 @@ Install using npm: `npm install togethertube-vote-bot`
 const bot = require("togethertube-vote-bot");
 
 bot.generatePlaySessions(1)
-  .then(() => {
-    let sessions = require("./sessions.json").sessions;
+  .then((sessions) => {
     console.log(sessions);
+    // Here you can save your generated sessions to a file
   })
   .catch((err) => {
     console.error(err);
@@ -29,10 +29,10 @@ This will generate (or add) one session and will save it in the `sessions.json` 
 const bot = require("togethertube-vote-bot");
 const sessions = require("./sessions.json").sessions;
 
-const room = "test";
+const room = "test"; // Room name
 const options = {
-  mediaServiceId: "youtube",
-  mediaId: "jNQXAC9IVRw"
+  mediaServiceId: "youtube", // Media Service [youtube/dailymotion/soundcloud/vimeo]
+  mediaId: "jNQXAC9IVRw" // Media ID
 };
 
 bot.addVote(room, sessions[0], options)
